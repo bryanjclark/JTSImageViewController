@@ -31,6 +31,7 @@ typedef NS_ENUM(NSInteger, JTSImageViewControllerTransition) {
 typedef NS_ENUM(NSInteger, JTSImageViewControllerBackgroundStyle) {
     JTSImageViewControllerBackgroundStyle_ScaledDimmed,
     JTSImageViewControllerBackgroundStyle_ScaledDimmedBlurred,
+    JTSImageViewControllerBackgroundStyle_Dimmed
 };
 
 ///-------------------------------------------------------------------------------
@@ -66,7 +67,8 @@ typedef NS_ENUM(NSInteger, JTSImageViewControllerBackgroundStyle) {
 @protocol JTSImageViewControllerDismissalDelegate <NSObject>
 
 - (void)imageViewerDidDismiss:(JTSImageViewController *)imageViewer;
-
+- (void)imageViewerDidDismiss:(JTSImageViewController *)imageViewer imageFlickedOffscreen:(BOOL)flickedOffscreen;
+- (void)setTransitionViewsHidden:(BOOL)hidden;
 @end
 
 ///-------------------------------------------------------------------------------
